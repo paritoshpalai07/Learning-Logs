@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/hero.css' %}">
+	
+ 	<title>Learning Logs</title>
+</head>
+<body>
+	<nav>
+			<p>Learning Logs</p>
+			<ul>
+				<li><a href="{% url 'index' %}">Home</a></li>
+				<li><a href="{% url 'index' %}">About</a></li>
+				<li><a href="{% url 'index' %}">Help</a></li>
+			</ul>
+		<div class="nav-btns">
+			<a href="{% url 'login' %}"><button id="login-btn">Login</button></a>
+			<a href="{% url 'register' %}" ><button id="register-btn">Register</button></a>
+		</div>
+	</nav>
+
+	<main class="hero-section">
+		<div class="hero-text">
+			<div class="wrapper">
+				<h1>Welcome to <br>Learning Log</h1>
+				<p>Track and organize your learning journey with Learning Logs. Whether you're learning a new skill, studying for a test, or keeping notes on subjects, this platform is designed to help you capture your progress and stay motivated.</p>
+				<a href="{% url 'register' %}"><button>Get Started</button></a>
+			</div>
+		</div>
+		<div class="hero-img">
+			<img src="{% static  'images/6025657.jpg' %}" alt="">
+		</div>
+	</main>
+</body>
+</html>

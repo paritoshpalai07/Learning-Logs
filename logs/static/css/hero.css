@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Epilogue", sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    /* background-color: hsl(0, 0%, 98%); */
+    background-color: #ffffff;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+nav p{
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    color: hsl(0, 0%, 41%);
+}
+
+nav ul li{
+    list-style: none;
+    font-size: .7rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    border: 1px solid hsl(0, 0%, 41%);
+    padding: 10px 20px;
+    border-radius: 12px;
+    transition: all .2s;
+}
+
+nav ul li a:visited{
+    color: hsl(0, 0%, 41%);
+}
+
+.nav-btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: .4rem;
+}
+
+.nav-btns button{
+    padding: 10px 20px;
+    border-radius: 12px;
+    outline: none;
+    background: none;
+    border: 1px solid hsl(0, 0%, 41%);
+    color: hsl(0, 0%, 41%);
+    font-size: .7rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#register-btn:hover{
+    background-color: hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 98%);
+    transition: all .2s;
+}
+
+#login-btn{
+    border: none;
+}
+
+#login-btn:hover{
+    border: 1px solid hsl(0, 0%, 41%);
+    transition: all .3s;
+    border-radius: 12px;
+}
+
+.hero-section{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text{
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text h1{
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 900;
+    margin-bottom: 30px;
+    margin-left: 150px;
+}
+
+.hero-text p{
+    font-size: .85rem;
+    line-height: 1.8;
+    margin-left: 150px;
+    color: hsl(0, 0%, 41%);
+}
+
+.hero-text .wrapper button{
+    padding: 15px 25px;
+    color: hsl(0, 0%, 98%);
+    background-color: hsl(0, 0%, 8%);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-weight: 500;
+    margin-left: 150px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.hero-text .wrapper button:hover{
+    padding: 15px 40px;
+    transition: all .25s;
+    background-color: hsl(0, 0%, 8%);
+}
+
+
+.hero-img{
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img img{
+    width: 95%;
+}

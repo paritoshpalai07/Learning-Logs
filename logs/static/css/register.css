@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Epilogue", sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: hsl(0, 0%, 98%);
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 8%);
+    padding: 20px;
+    border-bottom: 1px solid hsla(0, 0%, 45%, 0.234);
+}
+
+nav a{
+    text-decoration: none;
+    /* color: hsl(0, 0%, 8%); */
+    color:  hsl(0, 0%, 98%);
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100%;
+}
+
+form{
+    /* border: 1px solid hsl(0, 0%, 8%); */
+    border-radius: 10px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding: 20px;
+    background-color:  hsl(0, 0%, 98%);
+    filter: drop-shadow(5px 5px 5px rgba(129, 129, 129, 0.479));
+}
+
+form h1{
+    margin: 0 0 20px 0;
+    font-weight: 700;
+}
+
+form label{
+    margin-top: 10px;
+    /* border: 1px solid red; */
+    display: block;
+    font-size: .8rem;
+    font-weight: 500;
+    color: hsl(0, 0%, 41%);
+}
+
+form input{
+    display: block;
+    width: 300px;
+    margin-top: 10px;
+    background-color:  hsl(0, 0%, 98%);
+    border: none;
+    outline: none;
+    /* border-left: 1px solid hsla(0, 0%, 8%, 0.423); */
+    border-bottom: 1px solid hsla(0, 0%, 8%, 0.423);
+    /* border-radius: 5px; */
+    padding: 5px;
+}
+
+form label+label{
+    margin-top: 20px;
+    border: 1px solid red;
+}
+
+/* form input:focus{
+    border-radius: 5px;
+    box-shadow: inset 6px 6px 16px rgba(0,0,0, 0.25),
+    inset -4px -4px 12px rgba(255, 255, 255, 0.3);
+} */
+
+form p {
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+form button{
+    padding: 10px 20px;
+    color: hsl(0, 0%, 98%);
+    background-color: hsl(0, 0%, 8%);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+}

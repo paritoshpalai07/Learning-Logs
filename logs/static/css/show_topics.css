@@ -1,0 +1,216 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Epilogue", sans-serif;
+}
+body{
+    background-color: #ffffff;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 1px solid hsla(0, 0%, 41%, 0.31);
+}
+
+nav a{
+    text-decoration: none;
+}
+
+nav p{
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    color: hsl(0, 0%, 41%);
+}
+
+nav ul li{
+    list-style: none;
+    font-size: .7rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    border: 1px solid hsl(0, 0%, 41%);
+    padding: 10px 20px;
+    border-radius: 12px;
+    transition: all .2s;
+}
+
+nav ul li a:visited{
+    color: hsl(0, 0%, 41%);
+}
+
+.nav-btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: .4rem;
+}
+
+.nav-btns button{
+    padding: 10px 20px;
+    border-radius: 12px;
+    outline: none;
+    background: none;
+    border: 1px solid hsl(0, 0%, 41%);
+    color: hsl(0, 0%, 41%);
+    font-size: .7rem;
+    cursor: pointer;
+}
+
+#logout-btn:hover{
+    background-color: hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 98%);
+    transition: all .2s;
+}
+
+.center{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text{
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text h1{
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 900;
+    margin-bottom: 30px;
+    margin-left: 150px;
+}
+
+.hero-text p{
+    font-size: .85rem;
+    line-height: 1.8;
+    margin-left: 150px;
+    color: hsl(0, 0%, 41%);
+}
+
+.add-topic-btn{
+    padding: 15px 25px;
+    color: hsl(0, 0%, 98%);
+    background-color: hsl(0, 0%, 8%);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-left: 150px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.hero-text .wrapper button:hover{
+    padding: 15px 40px;
+    transition: all .25s;
+    background-color: hsl(0, 0%, 8%);
+}
+
+
+.hero-img{
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img img{
+    width: 85%;
+}
+
+.topics{
+    width: 50%;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+
+table{
+    margin-top: 70px;
+    border-spacing: 5px;
+}
+
+.topics table{
+    /* border: 1px solid black; */
+    width: 100%;
+}
+
+.topics table th h1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 98%);
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 900;
+    border-radius: 5px;
+}
+
+.topics table td{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0 0 0;
+    border: 1px solid hsl(0, 0%, 41%);
+    border-radius: 5px;
+    /* background-color: hsla(0, 0%, 77%, 0.373); */
+}
+
+.topics table td:hover{
+    padding: 15px;
+    transition: all .1s;
+}
+
+.topics table td a{
+    text-decoration: none;
+    color: hsl(0, 0%, 41%);
+    font-size: .9rem;
+    line-height: 1.2;
+}
+
+.topics .add-topic-btn{
+    background-color: #ffffff;
+    color: hsl(0, 0%, 41%);
+    border: 1px solid hsl(0, 0%, 41%);
+    margin: 5px 0 0 5px ;
+    padding: 10px 20px;
+}
+
+.topics .add-topic-btn:hover{
+    background-color: hsl(0, 0%, 8%);
+    color: #ffffff;
+    transition: all .25s;
+}
+
+/* .edit-delete-btn{
+    display: inline-block;
+    background-color: red;
+    color: hsl(0, 0%, 8%);
+    width: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */

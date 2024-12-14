@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Logs | Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+    <nav>
+        <p><a href="{% url 'index' %}">Learning Logs</a></p>
+    </nav>
+    <main>
+        <form action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            <h1>Register</h1>
+            <!-- <label for="firstname">First Name :</label>
+            <input type="text" name="firstname" id="firstname">
+            <label for="lastname">Last Name : </label>
+            <input type="text" name="lastname" id="lastname"> -->
+
+            <!-- <label for="username">Username : </label> -->
+            <!-- <input type="text" name="username" id="username"> -->
+            <label for="id_username">Username : </label>
+            <input type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus="" required="" aria-describedby="id_username_helptext" id="id_username">
+
+            <!-- <label for="password">Password : </label> -->
+            <!-- <input type="password" name="password" id="password"> -->
+            <label for="id_password1">Password : </label>
+            <input type="password" name="password1" autocomplete="new-password" aria-describedby="id_password1_helptext" id="id_password1">
+
+            <!-- <label for="confirmpasword">Confirm Password : </label>
+            <input type="password" name="confirmpassword" id="confirmpassword"> -->
+            <label for="confirmpasword">Confirm Password : </label>
+            <input type="password" name="password2" autocomplete="new-password" aria-describedby="id_password2_helptext" id="id_password2">
+
+            <p>Already have account? <a href="{% url 'login' %}">Login</a></p>
+            <button name="submit">Register</button>
+        </form>
+    </main>
+</body>
+</html>

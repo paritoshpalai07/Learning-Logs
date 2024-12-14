@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Epilogue", sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ffffff;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 1px solid hsla(0, 0%, 41%, 0.31);
+}
+
+nav p{
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    color: hsl(0, 0%, 41%);
+}
+
+nav ul li{
+    list-style: none;
+    font-size: .7rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    border: 1px solid hsl(0, 0%, 41%);
+    padding: 10px 20px;
+    border-radius: 12px;
+    transition: all .2s;
+}
+
+nav ul li a:visited{
+    color: hsl(0, 0%, 41%);
+}
+
+.nav-btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: .4rem;
+}
+
+.nav-btns button{
+    padding: 10px 20px;
+    border-radius: 12px;
+    outline: none;
+    background: none;
+    border: 1px solid hsl(0, 0%, 41%);
+    color: hsl(0, 0%, 41%);
+    font-size: .7rem;
+    cursor: pointer;
+}
+
+#logout-btn:hover{
+    background-color: hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 98%);
+    transition: all .2s;
+}
+
+#back-btn{
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: #ffffff;
+    color: hsl(0, 0%, 41%);
+    border: 1px solid hsl(0, 0%, 41%);
+    outline: none;
+    /* margin: 5px 0 0 0 ; */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+#back-btn:hover{
+    background-color: hsl(0, 0%, 8%);
+    color: #ffffff;
+    transition: all .25s;
+}
+
+
+form{
+    /* border: 1px solid black; */
+    width: 50%;
+    margin: auto;
+    margin-top: 70px;
+}
+
+form h1{
+    padding: 15px;
+    background-color: hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 98%);
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 900;
+    border-radius: 5px;
+}
+
+form input{
+    padding: 10px;
+    margin: 5px 0 0 0;
+    border: 1px solid hsl(0, 0%, 41%);
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    outline: none;
+    color: hsl(0, 0%, 41%);
+}
+
+form button{
+    background-color: #ffffff;
+    color: hsl(0, 0%, 41%);
+    border: 1px solid hsl(0, 0%, 41%);
+    margin: 5px 0 0 0 ;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+form button:hover{
+    background-color: hsl(0, 0%, 8%);
+    color: #ffffff;
+    transition: all .25s;
+}

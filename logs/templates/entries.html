@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Logs | Entries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/entries.css' %}">
+</head>
+<body>
+    <nav>
+        <p>Learning Logs</p>
+        <div class="nav-btns">
+            <a href=""><button id="logout-btn">Logout</button></a>
+        </div>
+    </nav>
+    <a href="{% url 'show_topics' user.id %}"><button id="back-btn">Back</button></a>
+    <main class="hero-section">
+
+
+        <div class="topics">
+            <table>
+                <tr>
+                    <th>
+                        <h1>{{topic}}
+                            <a href="{% url 'new_entry' user.id topic.id %}"><button class="add-topic-btn">Add Entry</button></a>
+                        </h1>
+                    </th>
+                </tr>
+                {% for entry in entries %}
+                <tr>
+                    <td>
+                        <div class="date-btns">
+                            <p>{{entry.date}}</p>
+                            <div class="btns">
+                                <a href="{% url 'edit_entry' user.id topic.id entry.id %}">Edit</a>
+                                <a href="{% url 'delete_entry' user.id topic.id entry.id %}">Delete</a>
+                            </div>
+                        </div>
+                        <p>{{entry.entry}}</p>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td id="empty-msg"><p>No Entries yet. Let's add one 😀</p></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+	</main>
+</body>
+</html>

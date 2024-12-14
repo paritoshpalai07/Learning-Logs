@@ -1,0 +1,30 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Log | Add Entry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/edit_entry.css' %}">
+</head>
+<body>
+    <nav>
+        <p>Learning Logs</p>
+        <div class="nav-btns">
+            <a href=""><button id="logout-btn">Logout</button></a>
+        </div>
+    </nav>
+    <a href="{% url 'show_entries' user.id topic.id %}"><button id="back-btn">Back</button></a>
+    <main>
+        <form action="{% url 'new_entry' user.id topic.id %}" method="post">
+            <h1>Add Entry :</h1>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button name="submit">Add</button>
+        </form>
+    </main>
+</body>
+</html>

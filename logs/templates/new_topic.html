@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Log | Add Topic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/add_topic.css' %}">
+</head>
+<body>
+    <nav>
+        <p>Learning Logs</p>
+       
+        <div class="nav-btns">
+            <a href=""><button id="logout-btn">Logout</button></a>
+        </div>
+    </nav>
+    <main>
+        <a href="{% url 'show_topics' user.id%}"><button id="back-btn">Back</button></a>
+        <form action="{% url 'new_topic' user.id%}" method="post">
+            <h1>Add New Topic:</h1>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button name="submit">Add</button>
+        </form>
+    </main>
+</body>
+</html>

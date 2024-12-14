@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Learning Logs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/show_topics.css' %}">
+</head>
+<body>
+    <nav>
+        <p>Learning Logs</p>
+       
+        <div class="nav-btns">
+            <a href="{% url 'login' %}"><button id="logout-btn">Logout</button></a>
+        </div>
+    </nav>
+    <main class="hero-section">
+        {% if not topics %}
+            <div class="center">
+                <div class="hero-text">
+                    <div class="wrapper">
+                        <h1>Hello,<br>{{user.username}}</h1>
+                        <p>No Topics yet. Lets add one. Start by creating a new topic for what you are learning. Keep adding entries as you progress on your learning path. Review past entries to see how far you've come.
+                        </p>
+                        <a href="{% url 'new_topic' user.id %}"><button class="add-topic-btn">Add Topic</button></a>
+                    </div>
+                </div>
+                <div class="hero-img">
+                    <img src="{% static 'images/6417880.jpg' %}" alt="">
+                </div>
+            </div>
+
+        {% else %}
+            <div class="topics">
+                <table>
+                    <tr>
+                        <th>
+                            <h1>Topics</h1>
+                        </th>
+                    </tr>
+                    {% for topic in topics %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'show_entries' user.id topic.id %}">{{topic.topic}}</a>  
+                            <a href="{% url 'delete_topic' topic.id %}" id="edit-btn">delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <div class="topic-btns">
+                    <a href="{% url 'new_topic' user.id %}"><button class="add-topic-btn">Add topic</button></a>
+                </div>
+            </div>
+        {% endif %}
+	</main>
+</body>
+</html>

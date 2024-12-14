@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Epilogue", sans-serif;
+}
+body{
+    background-color: #ffffff;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 1px solid hsla(0, 0%, 41%, 0.31);
+}
+
+nav p{
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    color: hsl(0, 0%, 41%);
+}
+
+nav ul li{
+    list-style: none;
+    font-size: .7rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    border: 1px solid hsl(0, 0%, 41%);
+    padding: 10px 20px;
+    border-radius: 12px;
+    transition: all .2s;
+}
+
+nav ul li a:visited{
+    color: hsl(0, 0%, 41%);
+}
+
+.nav-btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: .4rem;
+}
+
+.nav-btns button{
+    padding: 10px 20px;
+    border-radius: 12px;
+    outline: none;
+    background: none;
+    border: 1px solid hsl(0, 0%, 41%);
+    color: hsl(0, 0%, 41%);
+    font-size: .7rem;
+    cursor: pointer;
+}
+
+#logout-btn:hover{
+    background-color: hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 98%);
+    transition: all .2s;
+}
+
+
+.add-topic-btn{
+    padding: 15px 25px;
+    color: hsl(0, 0%, 98%);
+    background-color: hsl(0, 0%, 8%);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-left: 150px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+
+.topics{
+    width: 50%;
+    margin: auto;
+}
+
+table{
+    margin-top: 70px;
+    border-spacing: 10px;
+}
+
+.topics table{
+    /* border: 1px solid black; */
+    width: 100%;
+}
+
+.topics table th h1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 98%);
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 900;
+    border-radius: 5px;
+}
+
+.topics table th h1 a{
+    text-decoration: none;
+}
+
+.topics table th h1 a:active{
+    text-decoration: none;
+}
+
+.topics table tr{
+    margin-top: 10px;
+}
+
+.topics table tr td{
+    padding: 20px;
+    margin: 10px 0 0 0;
+    border: 1px solid hsl(0, 0%, 41%);
+    border-radius: 5px;
+}
+
+.topics table tr td p{
+    color: hsl(0, 0%, 41%);
+    font-size: .9rem;
+    margin: 10px 0 0 0;
+    text-align: justify;
+    line-height: 1.45;
+}
+
+.topics table td a{
+    text-decoration: none;
+    color: hsl(0, 0%, 41%);
+    font-size: .9rem;
+    text-align: right;
+}
+
+.add-topic-btn{
+    background-color: none;
+    color: #ffffff;
+    border: 1.5px solid #ffffff;
+    margin: 5px 0 0 0 ;
+    padding: 10px 20px;
+    display: inline;
+}
+
+.add-topic-btn:hover{
+    padding: 10px 30px;
+    transition: all .25s;
+}
+.date-btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.date-btns p{
+    display: inline;
+    font-weight: 700;
+}
+
+.btns{
+    display: inline;
+}
+
+.btns a{
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+
+#back-btn{
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: #ffffff;
+    color: hsl(0, 0%, 41%);
+    border: 1px solid hsl(0, 0%, 41%);
+    outline: none;
+    /* margin: 5px 0 0 0 ; */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+#back-btn:hover{
+    background-color: hsl(0, 0%, 8%);
+    color: #ffffff;
+    transition: all .25s;
+}
+
+#empty-msg p{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    /* color: hsl(0, 0%, 8%); */
+    font-weight: 500;
+}

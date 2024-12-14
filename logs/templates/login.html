@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Logs | Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <nav>
+        <p><a href="{% url 'index' %}">Learning Logs</a></p>
+    </nav>
+    <main>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <h1>Login</h1>
+            <label for="username">Username : </label>
+            <input type="text" name="username" id="username">
+            <label for="password">Password : </label>
+            <input type="password" name="password" id="password">
+            {% if form.errors %}
+                <p id="error">username and password didn't match</p>
+            {% endif %}
+            <p>Didn't have account? <a href="{% url 'register' %}">Register</a></p>
+            <button name="submit">Login</button>
+        </form>
+    </main>
+</body>
+</html>
