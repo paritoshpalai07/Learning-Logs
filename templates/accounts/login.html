@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block body %}
+    <nav class="fixed w-full bg-base-100 p-4 flex justify-center items-center shadow-sm">
+        <a href="" class="text-xl font-black">Learning Logs</a>
+    </nav>
+
+    <main class="flex justify-center items-center h-screen">
+        <!-- <h1>login form</h1> -->
+    
+        <form class="bg-base-100 max-w-1/4 min-w-[300px] p-4 rounded-lg" method="post" action="" onsubmit="document.getElementById('loading-screen').classList.toggle('hidden');">
+            <h1 class="text-2xl font-black">Login</h1>
+            {% csrf_token %}
+
+            {% if error_message %}
+                <!-- <p class="alert alert-error" id="error_message">{{error_message}}</p> -->
+                 <div role="alert" class="alert alert-error alert-soft mt-3">
+                    <p class="text-center">{{error_message}}</p>
+                </div>
+            {% endif %}
+            <div class="my-3">
+                <label class="block mb-2 text-md" for="username">Username: </label>
+                <input class="input" type="text" id="username" name="username" required>
+                <!-- <span>{{error_message}}</span> -->
+            </div>
+            <div class="my-3">
+                <label class="block mb-2 text-md" for="password">Password: </label>
+                <input class="input" type="password" id="password" name="password" required>
+            </div>
+            <p class="text-sm">Didn't have account? <a class="underline" href="{% url 'signup' %}">Sign up</a></p>
+            <input class="btn btn-neutral mt-3" id="login" type="submit" value="Login">
+        </form>
+    </main>
+
+    <div id="loading-screen" class="h-screen w-screen fixed top-0 flex justify-center items-center bg-base-100 hidden">
+            <div class="loading loading-dots loading-xl"></div>
+    </div>
+{% endblock body %}
