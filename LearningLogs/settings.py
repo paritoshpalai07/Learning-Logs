@@ -25,10 +25,7 @@ SECRET_KEY = 'django-insecure-ajhqb_rk7)^jp1y597cw5tn6j!k@eu5ul==!+-of&%ybo=83l9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['learning-logs-85up.onrender.com']
-CSRF_TRUSTED_ORIGINS = [
-    'https://learning-logs-85up.onrender.com',
-]
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 
@@ -135,5 +132,6 @@ STATIC_ROOT = BASE_DIR / 'productionfiles'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 
