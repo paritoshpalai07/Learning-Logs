@@ -1,0 +1,57 @@
+<div class="fixed z-10 navbar bg-base-100 shadow-sm" id="navbar">
+  <div class="flex-1">
+    <a href="{% url 'home' %}" class="btn btn-ghost text-xl">Learning Logs</a>
+  </div>
+  <div class="flex gap-2">
+    <form action="{% url 'home' %}">
+      <input
+        type="text"
+        placeholder="Search"
+        name="q"
+        class="input input-bordered w-24 md:w-auto"
+      />
+    </form>
+    <div class="dropdown dropdown-end">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+        <div class="w-10 rounded-full">
+          <img
+            alt="Tailwind CSS Navbar component"
+            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+          />
+        </div>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+      >
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        <li>
+          <select
+            class="select select-ghost select-sm mt-2"
+            onchange="changeTheme(this.value)"
+          >
+            <option class="bg-base-100 text-neutral" value="light">
+              Light
+            </option>
+            <option class="bg-base-100 text-neutral" value="dark">Dark</option>
+            <option class="bg-base-100 text-neutral" value="cupcake">
+              Cupcake
+            </option>
+            <option class="bg-base-100 text-neutral" value="bumblebee">
+              Bumblebee
+            </option>
+            <option class="bg-base-100 text-neutral" value="retro">
+              Retro
+            </option>
+            <option class="bg-base-100 text-neutral" value="abyss">
+              Abyss
+            </option>
+            <option class="bg-base-100 text-neutral" value="valentine">
+              Valentine
+            </option>
+          </select>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+{% extends 'main.html' %} 
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock head %}
+
+{% block body %}
+
+<nav class="fixed w-full bg-base-100 p-4 flex justify-center items-center shadow-sm">
+    <a href="" class="text-xl font-black">Learning Logs</a>
+</nav>
+
+<main class="flex justify-center items-center h-screen">
+    <form class="bg-base-100 max-w-1/4 min-w-[300px] p-4 rounded-lg" method="post" onsubmit="document.getElementById('loading-screen').classList.toggle('hidden');">
+        {% csrf_token %}
+
+        {% if error_message %}
+            <!-- <p class="alert alert-error" id="error_message">{{error_message}}</p> -->
+            <div role="alert" class="alert alert-error alert-soft mt-3">
+                <p class="text-center">{{error_message}}</p>
+            </div>
+        {% endif %}
+
+        <h1 class="text-2xl font-black">Sign Up form</h1>
+        <p class="my-3">
+            <label class="block mb-2 text-md" for="firstName">First Name: </label>
+            <input class="input" type="text" id="firstName" name="firstName" required>
+        </p>
+        <p class="my-3">
+            <label class="block mb-2 text-md" for="lastName">Last Name: </label>
+            <input class="input" type="text" id="lastName" name="lastName" required>
+        </p>
+        <p class="my-3">
+            <label class="block mb-2 text-md" for="email">Email: </label>
+            <input class="input" type="email" id="email" name="email" required>
+        </p>
+        <p class="my-3">
+            <label class="block mb-2 text-md" for="password">Password: </label>
+            <input class="input" type="password" id="password" name="password" required>
+        </p>
+        <p class="my-3">Already have account? <a class="underline" href="{% url 'login' %}">Login</a></p>
+        <input class="btn btn-neutral mt-3" id="signup" type="submit" value="Sign Up">
+    </form>
+</main>
+{% endblock body %}

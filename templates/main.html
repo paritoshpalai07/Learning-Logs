@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- icons -->
+     <script src="https://kit.fontawesome.com/05d28bde33.js" crossorigin="anonymous"></script>
+     <script src="{% static 'scripts/main.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'dist/output.css' %}">
+
+    {% block head %}
+    {% endblock head %}
+
+    {% block note_style %}
+    {% endblock note_style %}
+    <title>Learning Logs</title>
+</head>
+<body class="bg-base-300 min-h-screen w-full">
+    {% block body %}
+    {% endblock body %}
+</body>
+</html>

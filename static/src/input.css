@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@plugin "daisyui"{
+  themes: all;
+}
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+
+.epilogue{
+  font-family: "Epilogue", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+#topic-div *{
+  margin-bottom: 15px;
+}
+
+#topic-div ul li code{
+  background-color: rgba(156, 156, 156, 0.262);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+iframe{
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+}

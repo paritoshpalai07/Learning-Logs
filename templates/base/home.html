@@ -1,0 +1,151 @@
+{% extends 'main.html' %} {% load static %} {% block body %}
+ {% include 'base/navbar.html' %}
+
+<div class="grid grid-cols-1 gap-6 pt-24 md:grid-cols-[1fr_2fr_1fr]">
+  <!-- SIDE BAR -->
+  <div
+    class="card rounded-lg h-fit bg-base-100 card-md shadow-sm hidden md:block"
+  >
+    <div class="card-body">
+      <h3 class="card-title">Hello! {{request.user.username}} 👋</h3>
+
+      <p>The quote of the day for <i>YOU</i> !</p>
+      <p id="quote" class="bg-base-200 rounded p-2 italic font-mono">
+        "{{quote.quote}}"
+      </p>
+
+      <p class="font-mono italic text-sm">- {{quote.author}}</p>
+    </div>
+  </div>
+
+  <!-- TOPICS -->
+  <div class="px-6">
+    <div
+      class="py-4 px-5 flex justify-between items-center bg-neutral-800 border border-base-300 rounded-lg"
+    >
+      <h1 class="text-white text-3xl font-bold">Notes</h1>
+        <button class="btn btn-circle text-base-100 bg-neutral border-2 border-base-100 h-fit w-fit p-1 text-xs">
+            <i class="fa-solid fa-plus font-bold" {% if not update %} onclick="togglehide()" {% endif %} ></i>
+        </button>
+    </div>
+
+    <!-- ADD TOPIC FORM -->
+    <div class="mt-4 {% if not update %} hidden {% endif %}" id="input-form" onsubmit="document.getElementById('loading-screen').classList.toggle('hidden');">
+      <form method="post" action="">
+        {% csrf_token %}
+        <input
+          class="w-full p-3 rounded input"
+          type="text"
+          name="name"
+          required
+          {%
+          if
+          update
+          %}
+          value="{{note.name}}"
+          {%
+          else
+          %}
+          placeholder="Press enter to add..."
+          {%
+          endif
+          %}
+          autofocus
+        />
+      </form>
+    </div>
+
+    <div id="topics-list">
+      <!-- NO NOTE MESSAGE -->
+      {% if not notes %}
+      <div class="p-4 border-2 rounded-lg mt-4 border-black text-center">
+        <p>No Notes yet, let's add one 😄</p>
+      </div>
+      {% endif %} {% if q %}
+      <div class="breadcrumbs text-sm mt-3 pl-2">
+        <ul>
+          <li><a href="{% url 'home' %}">All</a></li>
+          <li><a>{{notes.first}}</a></li>
+        </ul>
+      </div>
+      {% endif %}
+
+      <!-- NOTES LIST -->
+      {% for note in notes %}
+      <div
+        class="flex justify-between shadow-sm rounded-lg py-4 px-5 mt-2 bg-base-100"
+      >
+        <a href="{% url 'note_view' note.id %}">{{note.name}}</a>
+
+        <div class="flex justify-between items-center gap-3">
+          <!-- update icon -->
+          <a class="text-sm" href="{% url 'update' note.id %}"
+            ><i class="fa-solid fa-pen-to-square"></i
+          ></a>
+          <!-- delete icon -->
+          <a class="text-sm" href="{% url 'delete' note.id %}"
+            ><i class="fa-solid fa-trash"></i
+          ></a>
+        </div>
+      </div>
+
+      {% endfor %} {% if notes|length > 4 %}
+      <div>
+        <a
+          {%
+          if
+          show_less
+          %}
+          href="?show=less"
+          {%
+          else
+          %}
+          href="?show=all"
+          {%
+          endif
+          %}
+          ><button class="btn btn-neutral mt-3">
+            {%if show_less%}Show Less{% else %} Show All {%endif%}
+          </button></a
+        >
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <!-- ROOMS -->
+  <div
+    class="card rounded-lg h-fit bg-base-100 card-md shadow-sm hidden md:block"
+  >
+    <div class="card-body">
+      <h3 class="card-title">Note Rewind 🎯</h3>
+      <p class="italic">let's revise a topic randomly!</p>
+      <div class="bg-base-100">
+        <div
+          class="flex items-center justify-between gap-3 p-3 rounded-lg bg-base-200"
+        >
+          <div class="inline-block w-fit">
+            <div>
+              <h2 class="text-sm font-bold">{{revision_topic.note}}</h2>
+              <p>{{revision_topic.topic_name}}</p>
+            </div>
+          </div>
+          <div class="card-actions w-fit">
+            <a
+              href="{% url 'note_topic' revision_topic.note.id revision_topic.id %}"
+            >
+              <button class="btn btn-sm btn-neutral">Recap</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="loading-screen" class="h-screen w-screen fixed top-0 flex justify-center items-center bg-base-100 hidden">
+            <div class="loading loading-dots loading-xl"></div>
+    </div>
+
+<script src="{% static 'scripts/home.js' %}"></script>
+
+{% endblock body %}
